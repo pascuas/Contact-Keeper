@@ -1,11 +1,12 @@
 import {
     ADD_CONTACT,
-    DELETE_Contact,
+    DELETE_CONTACT,
     SET_CURRENT,
     CLEAR_CURRENT,
     UPDATE_CONTACT,
     FILTER_CONTACTS,
-    CLEAR_FILTER
+    CLEAR_FILTER,
+    DELETE_Contact
 } from '../types';
 
 export default (state, action) => {
@@ -15,6 +16,11 @@ export default (state, action) => {
                 ...state,
                 contacts: [...state.contacts, action.payload]
             };
+        case DELETE_CONTACT:
+            return {
+                ...state,
+                contacts: state.contacts.filter(contact => contact.id !== action.payload)
+            }
         default:
             return state;
     }
