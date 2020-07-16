@@ -18,7 +18,7 @@ const Register = () => {
     const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
 
     const onSubmit = e => {
-        e.prevent.default();
+        e.preventDefault();
         if(name === '' || email === '' || password === '') {
             setAlert('Please enter all fields', 'danger');
         } else if (password !== password2) {
