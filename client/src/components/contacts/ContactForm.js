@@ -49,7 +49,7 @@ const ContactForm = () => {
         <h2 className="text-primary">{current ? 'Edit Contact' : 'Add Contact'}</h2>
         <input
           type="text"
-          placeholder="name"
+          placeholder="Name"
           name="name"
           value={name}
           onChange={onChange}
